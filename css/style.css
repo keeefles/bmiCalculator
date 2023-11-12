@@ -16,3 +16,7 @@
 input {
     margin-bottom: 10px;
 }
+#output {
+    font-size: large;
+    text-align: center;
+}
