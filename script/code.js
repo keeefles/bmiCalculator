@@ -1,16 +1,20 @@
-function calculateBMI() {
-    // Get height and weight values from input fields
-    var height = parseFloat(document.getElementById('height').value);
+document.getElementById('calculateButton').addEventListener('click', function () {
     var weight = parseFloat(document.getElementById('weight').value);
-
-    // Check if the values are valid numbers
-    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-        document.getElementById('result').innerText = 'Please enter valid height and weight.';
-    } else {
-        // Calculate BMI
-        var bmi = weight / Math.pow(height, 2);
-        
-        // Display the result
-        document.getElementById('result').innerText = 'Your BMI is: ' + bmi.toFixed(2);
+    var height = parseFloat(document.getElementById('height').value);
+    if (!isNaN(weight) && !isNaN(height) && height > 0) {
+        var bmi = weight / ((height / 100) * (height / 100));
+        var resultElement = document.getElementById('result');
+        var category;
+        if (bmi < 18.5) {
+            category = 'Underweight';
+        } else if (bmi >= 18.5 && bmi < 25) {
+            category = 'Normal Weight';
+        } else {
+            category = 'Overweight';
+        }
+    
+        resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>Category: ' + category;
+        } else {
+        document.getElementById('result').innerHTML = 'Please enter valid weight and height.';
     }
-}
+});
