@@ -1,14 +1,14 @@
 document.getElementById('calculateButton').addEventListener('click', function () {
 
-    var weight = parseFloat(document.getElementById('weight').value);
-    var height = parseFloat(document.getElementById('height').value);
+    let weight = parseFloat(document.getElementById('weight').value);
+    let height = parseFloat(document.getElementById('height').value);
 
-    if (!isNaN(weight) && !isNaN(height) && height > 0) {
+    if (!isNaN(weight) & !isNaN(height) & height > 0) {
 
-        var bmi = weight / ((height / 100) * (height / 100));
-        var resultElement = document.getElementById('result');
+        let bmi = weight / ((height / 100) * (height / 100));
+        let resultElement = document.getElementById('result');
 
-        var category;
+        let category;
         if (bmi < 18.5) {
             category = 'Underweight';
         } else if (bmi >= 18.5 && bmi < 24.9) {
@@ -19,7 +19,7 @@ document.getElementById('calculateButton').addEventListener('click', function ()
             category = 'Obese';
         }
     
-        resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>Category: ' + category;
+        resultElement.innerHTML = bmi.toFixed(2) + '<br>' + category;
         } else {
         document.getElementById('result').innerHTML = 'Please enter valid weight and height.';
     }

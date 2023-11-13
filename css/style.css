@@ -42,3 +42,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: rgba(238,174,202,1);
 }
+#result {
+    font-weight: 400;
+}
